@@ -132,7 +132,7 @@ boss-ai         (optional)
 
 > You may also see a `build-native` agent — this is a built-in OpenCode agent, not part of the workshop. You can ignore it.
 
-If all five agents appear, the laptop is ready.
+If all five agents appear, type `hi` into the chat and wait a few seconds. If the model responds, the laptop is ready.
 
 ### 3.2 Shut down OpenCode and Lemonade
 
