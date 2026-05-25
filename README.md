@@ -128,14 +128,7 @@ If all five agents appear, the laptop is ready.
 
 ### 3.2 Shut down OpenCode and Lemonade
 
-After confirming the agents, shut everything down so the model is not holding GPU memory when the participant starts.
-
-1. Exit OpenCode — press `q` or `Ctrl+C` inside the TUI
-2. Stop Lemonade:
-
-```bash
-sudo systemctl stop lemond
-```
+After confirming the agents, exit OpenCode — press `q` or `Ctrl+C` inside the TUI — then **restart the laptop**. A reboot clears GPU memory even if the Lemonade service is still running in the background.
 
 The participant will launch `lemonade launch opencode` themselves at the start of the workshop.
 
@@ -147,9 +140,11 @@ Open a new terminal and run:
 # Confirm ROCm can see the GPU
 rocminfo | grep -E "Name:|Marketing Name:" | head -6
 
-# Confirm Lemonade server is responding
-curl -s http://localhost:11434/api/tags | python3 -m json.tool
+# Confirm Lemonade service is running
+systemctl status lemond | head -9
 ```
+
+> As long as these don't error out and you see a response, you're good.
 
 ---
 
@@ -168,6 +163,13 @@ Exit OpenCode (`Ctrl+C`), then re-run `lemonade launch opencode` and select opti
 - Confirm Secure Boot is still disabled in BIOS (F10 to enter)
 - Reboot and try again
 - Run `rocminfo` and `rocm-smi` to diagnose
+
+**Lemonade service needs to be manually restarted (serious errors only)**
+You should not need to do this under normal circumstances — a reboot is sufficient. Only use this if you are seeing a serious error with the Lemonade service itself:
+```bash
+sudo systemctl stop lemond
+systemctl start lemond
+```
 
 ---
 
