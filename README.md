@@ -132,7 +132,7 @@ After confirming the agents, exit OpenCode — press `q` or `Ctrl+C` inside the 
 
 The participant will launch `lemonade launch opencode` themselves at the start of the workshop.
 
-### 3.3 Quick sanity checks (optional but recommended)
+### 3.3 Quick sanity checks
 
 Open a new terminal and run:
 
@@ -142,9 +142,17 @@ rocminfo | grep -E "Name:|Marketing Name:" | head -6
 
 # Confirm Lemonade service is running
 systemctl status lemond | head -9
+
+# Confirm GPU is idle
+rocm-smi
 ```
 
-> As long as these don't error out and you see a response, you're good.
+> As long as these don't error out and you see a response, you're good. On `rocm-smi`, confirm GPU usage is below 2% before handing off the laptop.
+
+### 3.4 Final cleanup
+
+1. Close all open terminal windows.
+2. Open the browser, then close it. Even if it was already closed after the reboot, open a fresh window and close it — this clears any cached session data from the previous user.
 
 ---
 
