@@ -112,7 +112,7 @@ Inside the OpenCode TUI (which should have launched in the previous step), type:
 /agents
 ```
 
-You should see:
+You should see (not necessarily in this order):
 
 ```
 ui-renderer
@@ -121,6 +121,8 @@ gameplay-rules
 vfx-polish      (optional)
 boss-ai         (optional)
 ```
+
+> You may also see a `build-native` agent — this is a built-in OpenCode agent, not part of the workshop. You can ignore it.
 
 If all five agents appear, the laptop is ready.
 
