@@ -147,7 +147,7 @@ systemctl status lemond | head -9
 rocm-smi
 ```
 
-> As long as these don't error out and you see a response, you're good. On `rocm-smi`, confirm GPU usage is below 2% before handing off the laptop.
+> As long as these don't error out and you see a response, you're good. On `rocm-smi`, confirm VRAM usage is below 2% before handing off the laptop.
 
 ### 3.4 Final cleanup
 
