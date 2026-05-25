@@ -120,7 +120,7 @@ Inside the OpenCode TUI (which should have launched in the previous step), type:
 /agents
 ```
 
-You should see (not necessarily in this order):
+You should see (not necessarily in this order — use the arrow keys to scroll through the list):
 
 ```
 ui-renderer
