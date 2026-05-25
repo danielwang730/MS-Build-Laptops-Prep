@@ -124,7 +124,20 @@ boss-ai         (optional)
 
 If all five agents appear, the laptop is ready.
 
-### 3.2 Quick sanity checks (optional but recommended)
+### 3.2 Shut down OpenCode and Lemonade
+
+After confirming the agents, shut everything down so the model is not holding GPU memory when the participant starts.
+
+1. Exit OpenCode — press `q` or `Ctrl+C` inside the TUI
+2. Stop Lemonade:
+
+```bash
+sudo systemctl stop lemond
+```
+
+The participant will launch `lemonade launch opencode` themselves at the start of the workshop.
+
+### 3.3 Quick sanity checks (optional but recommended)
 
 Open a new terminal and run:
 
