@@ -36,7 +36,15 @@ Manually close any open browser windows and terminal tabs before proceeding.
 
 ```bash
 # In a new terminal:
+```
 
+> If the terminal prompt shows a virtual environment (e.g. `(venv)` or `(base)`), deactivate it first:
+> ```bash
+> deactivate        # for Python venv
+> conda deactivate  # for conda
+> ```
+
+```bash
 # List all containers (running and stopped)
 docker ps -a
 
